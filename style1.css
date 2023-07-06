@@ -1,0 +1,255 @@
+*
+{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    font-family: serif, Helvetica, sans-serif;
+}
+.hero
+{
+    height: 100vh;
+    width: 100%;background-image: url();
+    background-size: cover;
+    background-position: center;
+}
+nav
+{
+    display:flex;
+    align-items: center;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+ nav,ul
+{
+  display: flex;
+  float: right;
+    
+}
+nav,ul,li
+{
+    padding:10px 20px;
+}
+.name
+{
+    color: black;
+    font-size: 25px;
+}
+span
+{
+    color: green;
+}
+nav,ul,li,a{
+ font-weight: bold;
+ color: black;
+ text-decoration: none;
+}
+nav,ul,li,a:hover
+{
+    color: red;
+    background-color: transparent;
+    /* transform: 0; */
+}
+.btn
+{
+    color: greenyellow;
+    background-color: red;
+    font-weight: 10px;
+    border-radius: 40px;
+    text-decoration: none;
+
+}
+.content
+{
+    top: 200px;
+    left: 280px;
+    position: absolute;
+    transform: translateY(50,50);
+
+}
+h3
+{
+    color: black;
+    font-size: 30px;
+    margin: bottom 40px;
+
+}
+h2
+{
+   color: black;;
+}
+h4
+{
+  color:black;
+
+}
+.suscribe
+{
+    width: 400px;
+    position:relative;
+}
+.suscribe form input:first-child
+{ 
+   display: inline-block;
+   width: 100%;
+   padding: 15px 120px 15px 14px;
+   border: 3px solid red;
+   border-radius: 40px;
+}
+.suscribe form input:last-child
+{
+
+    padding:10px 30px;
+    background-color: red;
+    border: none;
+    color: black;
+    top: 7px;
+    right: 7px;
+    border-radius: 40px;
+    float:right;
+    position: absolute;
+    box-shadow: 0px opx 10px red;
+    
+}
+ section.about_me
+{
+    width:100%;
+    padding: 100px 0px;
+    background-color:darkgray;
+}
+.about_me img
+{
+    height: 900px;
+    width: 400px;
+}
+.about_contect
+{
+    color:white;
+    margin-left: 40px;
+}
+.main
+{
+    display: flex;
+}
+.about_contect h3,h5,p
+{
+   color: white;
+   font-size: 50px;
+   letter-spacing: 1px;
+}
+.btn_talk:hover
+{
+    background-color: transparent;
+    border: 2px solid red;
+    cursor: pointer;
+    padding: 10px 1opx;
+}
+ .btn_talk
+ {
+    color: greenyellow;
+    background-color: red;
+    font-weight: 20px;
+    border-radius: 50px;
+    text-decoration: none;
+ }
+
+.Skills
+{
+    background: black;
+    width: 100%;
+    padding: 90px 5px;
+}
+.title h2
+{
+   color: white;
+   font-size: 60px;
+   text-align: center;
+}
+.box
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card
+{
+    height: 300px;
+    width: 270px;
+    background:grey;
+    border-radius: 25px;
+    margin: 12px;
+}
+.card h4
+{
+  text-align: center;
+  font-size: 30px;
+  margin-top: 20px;
+  letter-spacing: 2px;
+
+}
+.para p
+{
+   color: pink;
+   font-size: 15px;
+   line-height: 30px;
+   margin-bottom: 40px;
+   margin-top: 55px;
+}
+.para .buttonS
+{
+    background-color: red;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    padding: 10px 20px;
+    transition: 05ms;
+    
+}
+.para .buttonS:hover
+{
+    background-color: transparent;
+    border: 2px solid red;
+    cursor: pointer;
+    padding: 10px 1opx;
+}  
+
+.card i
+{
+color: red;
+font-size: 40px;
+text-align: center;
+margin: bottom 15px 20px;
+display: block;
+}
+.Hire
+{
+    width: 100%;
+    height: 200px;
+    align-items: center;
+    background: color #123123;
+    justify-content: center;
+    display: flex;
+}
+.Hire .buttonS
+{
+    background-color: red;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    padding: 10px 20px;
+    transition: .5ms;
+    margin-left: 50%;
+    
+}
+.Hire h4
+{
+  font-size: 30px;
+  color: white;
+
+}
+.Hire .buttonS:hover
+{
+    background-color: transparent;
+    border: 2px solid red;
+    cursor: pointer;
+    padding: 10px 1opx;
+} 
