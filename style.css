@@ -1,1 +1,64 @@
+body{
 
+    animation: te;
+    animation-duration: 2s;
+    animation-delay: 2s;
+    
+    animation-iteration-count: infinite;
+    
+}
+.class
+{
+    background-color: rgb(234, 250, 7);
+    height: 300px;
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 10px;
+
+
+}
+button
+{
+   width: 100px;
+    padding: 10px;
+    margin: 1px;
+    background-color: lime;
+    color: rgb(255, 255, 255);
+    font-size: 100px;
+    border-radius: 10px;
+    border: none;
+}
+button:hover
+{
+    margin: 20px;
+    padding: 10px;
+}
+
+
+    
+
+
+    
+   
+
+h1
+{
+    padding: 20px;
+    margin: 48px;
+    font-size: 50px;
+    color: orangered;
+
+}
+@keyframes te {
+    from{
+        background-color: black;
+    }
+    to
+    {
+        background-color: blueviolet;
+    }
+    
+}
