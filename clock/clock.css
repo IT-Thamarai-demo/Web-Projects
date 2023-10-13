@@ -1,1 +1,167 @@
+body{ 
+  background-color: gold;
+  margin: 60px;
+  
+}
+
+
+.imgclock
+{  
+  top: auto;
+  height: 370px;
+  width: 350px;
+  border: 10px solid #06b3e7;
+  box-shadow: 10px 30px 10px 30px whitesmoke ;
+  margin: auto; 
+  border-radius: 100px;
+  background-color: gray;
+  text-align: center;
+  justify-content: center;
+ 
+  
+}
+
+#a{
+    position: absolute;
+    left: 670px;
+    font-size: 24px;
+    color: blue;
+    top: 50px;
+}
+#b
+{
+    position: absolute;
+    left: 750px;
+    top: 100px;
+    font-size: 20px;
+    color: white;
+    
+}
+#c
+{
+  position: absolute;
+  left: 800px;
+  top: 150px;
+  font-size: 20px;
+  color: white;
+}
+#d
+{
+  position: absolute;
+  left: 820px;
+  top: 210px;
+  font-size: 24px;
+  color:yellow;
+}
+#e
+{
+  position: absolute;
+  left: 800px;
+  top: 292px;
+  font-family: 20px;
+  color: white;
+
+}
+#f{
+  position: absolute;
+  left: 750px;
+  top: 352px;
+  font-size: 22px;
+  color: white;
+}
+#i{
+  position: absolute;
+  left: 672px;
+  top: 380px;
+  font-size: 24px;
+  color: blue;
+}
+#j{
+  position: absolute;
+  left: 590px;
+  top: 100px;
+  font-size: 20px;
+  color: white;
+}
+#k{
+  position: absolute;
+  left: 550px;
+  top: 150px;
+  font-size: 20px;
+  color: white;
+}
+#l{
+  position: absolute;
+  left: 525px;
+  top: 210px;
+  font-size: 24px;
+  color: yellow;
+}
+#m{
+  position: absolute;
+  left: 555px;
+  top: 290px;
+  font-size: 20px;
+  color: white;
+}
+#n{
+  position: absolute;
+  left: 595px;
+  top: 350px;
+  font-size: 24px;
+  color: white;
+}
+#arrow
+{ 
+  position: relative;
+  width: 9px;
+  top: 175px;
+  border: solid yellowgreen;
+  
+  border-radius: 50px;
+  left: 158px;
+  
+  
+  
+}
+#second
+{
+  position: absolute;
+  
+  width: 90px;
+  border: 2px solid red;
+  border: radius 10px;
+  left: 675px;
+  top: 245px;
+
+  transform:rotate(-90deg) ;
+  transform-origin: left;
+  
+}
+#minute
+{
+  position: absolute;
+  width: 60px;
+  border: 2px solid purple;
+  border-radius :10px;
+  left: 675px;
+  top: 245px;
+ 
+  transform:rotate(-90deg) ;
+  transform-origin: left;
+
+
+}
+#hour
+{
+  position: absolute;
+  width: 40px;
+  border: 2px solid green;
+  border-radius :10px;
+  left: 675px;
+  top: 245px;
+  transform:rotate(-90deg) ;
+ 
+  transform-origin:left;
+}
 
