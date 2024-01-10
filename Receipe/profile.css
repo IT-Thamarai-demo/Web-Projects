@@ -1,0 +1,164 @@
+*
+{
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+body
+{
+    background-color: #2b1d0f;
+    color: #fff;
+}
+header nav{
+    background-color: #212121;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1;
+}
+header h1{
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+}
+header nav form{
+    display: flex;
+    justify-content: center;
+}
+form input{
+    flex-grow:6;
+    margin-right: 10px;
+    padding: 10px;
+    width: 500px;
+    text-indent: 50px;
+    font-size: 20px;
+}
+form  button{
+   border: none;
+   font-size: 20px;
+   padding:10px;
+   border-radius: 10px;
+   cursor: pointer;
+   transition: background-color 0.2s ease-in-out;
+   
+}
+
+.recipe-contanier
+{
+    margin-top: 20px;
+    text-align: center;
+    
+
+}
+.receipe
+{
+    display: inline-block;
+    height: 300px;
+    width:300px;
+    margin: 15px;
+    background-color: black;
+    vertical-align: top;
+}
+.receipe img{
+    height: 175px;
+    width: 201px;
+    margin: 1px;
+    padding: 8px;
+    background-color: 19px;
+
+}
+
+.receipe button
+{
+   width: 100%;
+    padding: 10px;
+    background-color:white;
+    color:black;
+    border: none;
+    outline: none;
+    /* appearance:none; */
+}
+.receipe button:hover
+{
+    background-color: blue;
+    transition: 2s all;
+    color: white;
+    cursor: pointer;
+    
+}
+.receipe,.receipe button
+{
+    border-radius: 10px;
+}
+.receipe:hover
+{
+    transform: translateY(-20px);
+    transition: 0.3s all;
+
+}
+.receipe-details
+{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #ff5c5c;
+    
+}
+.fix
+{
+    height:auto;
+    width: auto;
+    background-color: rgb(12, 1, 1);
+}
+.receipe-close-btn
+{
+    
+    position: absolute;
+    top: 0px;
+    height: 100px;
+}
+.receipe-details button
+{
+    width: 100%;
+    padding: 10px;
+    background-color:white;
+    color:black;
+    border: none;
+    outline: none;
+    margin-bottom: -60px;
+
+}
+.receipe-details button:hover
+{
+    /* background-color: blue; */
+    transition: 2s all;
+    color: white;
+    cursor: pointer;  
+}
+.recipe-contanier,.receipe-contanier button
+{
+    border-radius: 40px;
+}
+
+form input:focus
+{
+   outline: green 10px;
+}
+.recipe-contanier p
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:10px;
+    
+}
+.btn:hover
+{
+    background-color: #ff5c5c;
+}
