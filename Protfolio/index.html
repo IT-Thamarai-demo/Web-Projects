@@ -1,1 +1,131 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <br>
+   
+    <header>
+        <div class="brand-name">
+          <h3>Thamarai</h3>
+        </div>
+        <div class="links">
+            <ul>
+                <li><a  href="">Home</a></li>
+                <li><a  href="">About</a></li>
+                <li><a  href="">Skills</a></li>
+                <li><a  href="">Contact Us</a></li>
+            </ul>
+           
+        </div>
+        <div class="edit">
+            <button class="edit1">Change color </button>
+        </div>
+        
+    </header> 
+    <br> <br><br><br>
+    <br>
+    <main>
+        <div class="small">
+            <h1>Thamarai <small style="font-size: 20px;">Kannan</small></h1>
+             <h1>Iam a <span id="c">Web Developer</span></h1>
+             <p> Hello! I'm a passionate frontend developer<br>
+                 love for creating engaging and user-friendly web applications.<br>
+                  I have a strong foundation in HTML, CSS, and JavaScript,<br>
+                 along with experience in various frontend frameworks and libraries</p>
+        </div>
+        <div class="pic">
+             <img src="WhatsApp Image 2024-01-10 at 10.36.39 AM.jpeg" alt="">
+        </div>
+    </main>
+   
+    <section>
+        <div class="skills">
+            
+            <div class="card"> 
+                <br>
+                <i class="fa-brands fa-html5"></i>
+                <br><br>
+                <h3>HTML</h3>
+                <br>
+                <p>I Finihed Lot of Porjects In HTML</p>
+                <br>
+                <small for="file">HTML</small>
+                <progress id="file" value="100" max="100"> </progress>
+            </div>
+            <div class="card">
+                <br>
+                <i class="fa-brands fa-css3-alt"></i>
+                <br><br>
+                <h3>CSS</h3>
+                <br>
+                <p>I Finihed Lot of Porjects In CSS</p>
+                <br>
+                <small for="file">CSS</small><br>
+                <progress id="file" value="100" max="100"> </progress>
+            </div>
+            <div class="card">
+                <br>
+                <i class="fa-brands fa-js"></i>
+                <br><br>
+                <h3>Java Script</h3>
+                <br>
+                <p>I Finihed Lot of Porjects In Js </p>
+                <br>
+                <small for="file">JavaScript</small><br>
+                <progress id="file" value="50" max="100">  </progress>
+            </div>
+            
+            
+        </div>
+        
+        <div class="contactus">
+            <h1>Contact us</h1><br>
+            <form action="">
+                    <label for="name">Name :</label>
+                    <br>
+                    <input type="text" name="name" id="name" required>
+                    <br>
+                    <label for="name">Email :</label>
+                    <br>
+                    <input type="email" name="email" id="email" required>
+                    <br>
+                <button class="edit1">Send</button>
+            </form>
+            
+        </div>
+    </section>
+    <footer>
+        <div class="col"><a href="https://github.com/IT-Thamarai-demo/-Thamarai-code-"><i class="fa-brands fa-github"></i></a></div>
+        <div class="col"><a href="https://www.instagram.com/btech_info/"><i class="fa-brands fa-instagram"></i></a></div>
+        <div class="col"><a href="#"><i class="fa-brands fa-facebook"></i></a></div>
+        <div class="col"><a href="#"><i class="fa-brands fa-twitter"></i></a></div>
+        <div class="col"><a href="#"><i class="fa-brands fa-whatsapp"></i></a></div>
+    </footer>
+    <script defer>
+        let name=document.querySelector("#c")
+        let body=document.querySelector("body");
+        let btn=document.querySelector(".edit1")
+        btn.addEventListener("click",()=>
+        {
+          body.classList.toggle("mall")
+          btn.textContent="White Theme";
+        })
+        setInterval(() => {
+             name.textContent="Free Lancer";
+        }, 1000);
+        setInterval(() => {
+            name.textContent="Web Desinnger";
+        }, 3000);
+        setInterval(() => {
+            name.textContent="Content Createar";
+        }, 5000);
+      
+    </script>
+</body>
+</html>
