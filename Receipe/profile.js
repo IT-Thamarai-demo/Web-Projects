@@ -66,8 +66,16 @@ function rem(event)
 
 searchBtn.addEventListener("click", (e) => {
   e.preventDefault();
+  
   const input = searchBox.value.trim();
+  if(input.value==="")
+  {
+     alert("Sesrh Receipe At The Mooment")
+  }
+  else
+     {
    fetchRecipes(input)
+     }
 
   
   }
