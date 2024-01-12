@@ -12,7 +12,7 @@
     --name:35px;
 }
 header{
-    width: 100%;
+    width: 1200px;
     height: 40%;
     display: flex;
     justify-content: space-around;
@@ -93,7 +93,7 @@ main{
     background-color: rgb(240, 234, 234);
     border-radius: 50%;
     border: 10px solid white;
-   
+    
     overflow: hidden;
 }
 .pic img
@@ -162,6 +162,9 @@ section
     height: 350px;
     /* background-color: blueviolet; */
     text-align: center;
+    border:4px solid grey;
+    padding: 2em;
+    margin-top: -1em;
 }
 
 input[type=text],input[type=email]
@@ -203,7 +206,11 @@ footer i
     text-align: center;
     margin-top: 4px;
     margin-left: px;
-    color: black;
+    /* color: black; */
+}
+span
+{
+    display: flex;
 }
 
 .col{
@@ -212,13 +219,18 @@ footer i
     text-align: center;
     border-radius: 100%;
    background-color: white;
+   display: flex;
+   align-items: center;
+   justify-content: center;
 
 }
-.col
+/* .col
 {
    animation: load 10s infinite;
 
-}
+} */
+
+
 @keyframes load {
     0%{
         transform: rotate(360deg);
@@ -237,7 +249,7 @@ footer i
     transform: translateX(0px);
     background-color: gray;
     opacity: 1;
-    transform: rotate(360);
+    transform: rotate(360deg);
    }
 }
 body
@@ -245,15 +257,27 @@ body
     background-color: black;
     color: white;
 }
-#C{
-    color: yellow;
-    overflow: hidden;
-    width: 0ch;
+#c
+{
+    font-weight: 600;
     white-space: nowrap;
-    border-left: 2px solid grey;
-    animation: dem 8s steps(20) infinite;
-    transition: all 2s
-};
+    overflow: hidden;
+    width:0ch;
+    animation: come 7s steps(20)  infinite ;
+
+    border-left: 2px solid yellow;
+
+}
+@keyframes come {
+    0%
+    {
+        width: 0ch;    
+    }
+    100%
+    {
+        width: 16ch;
+    }
+}
 @keyframes dem {
      from
      {
@@ -342,3 +366,27 @@ h1
   .mall{
     background-color: mediumseagreen;
   }
+  footer i:first
+  {
+   color: blue;
+  }
+.spinner
+{
+
+    border: 2px slid blue;
+    border-top: 10px solid green;
+    border-radius: 100%;
+    animation: role 8s infinite;
+    height: auto;
+    width: auto;
+}
+@keyframes role {
+    0%
+    {
+        transform: rotate(360deg);
+    }
+    100%
+    {
+        transform: rotate(0deg);
+    }
+}
