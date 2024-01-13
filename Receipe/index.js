@@ -8,7 +8,7 @@ const ext=document.querySelector(".receipe.details");
 const div=document.querySelector("#hai");
 // function to get recipes
 const fetchRecipes = (query) => {
-  
+  RecipeContainer.innerHTML="";
  
 
  
