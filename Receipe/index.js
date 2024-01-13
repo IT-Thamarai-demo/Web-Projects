@@ -21,7 +21,7 @@ const fetchRecipes = (query) => {
        receipeDiv.classList.add("receipe")
        
 
-      RecipeContainer.innerHTML="";
+
 
        receipeDiv.innerHTML = `
           <img src="${meal.strMealThumb}" alt="${meal.strMeal}">
