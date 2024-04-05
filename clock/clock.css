@@ -1,7 +1,9 @@
 body{ 
-  background-color: gold;
-  margin: 60px;
   
+     display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
 }
 
 
