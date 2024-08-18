@@ -9,8 +9,6 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f5f5f5;
     color: #333;
-    padding: 0;
-    margin: 0;
 }
 
 /* Header styling */
@@ -41,7 +39,8 @@ form {
     border: none;
     border-radius: 4px 0 0 4px;
     outline: none;
-    width: 200px;
+    width: 100%;
+    max-width: 250px;
     transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
@@ -90,9 +89,16 @@ main {
     padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    position: relative;
+    position: absolute; /* Changed from relative to absolute */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    max-width: 90%;
+    max-height: 80%;
+    overflow-y: auto; /* Added for scrollable content */
     transition: box-shadow 0.3s ease, transform 0.3s ease;
-    margin-top: 2rem;
 }
 
 .recipe-details:hover {
@@ -119,7 +125,7 @@ main {
     transform: scale(1.1);
 }
 
-/* Recipe card styling (assuming you will have recipe cards) */
+/* Recipe card styling */
 .recipe-card {
     background-color: white;
     border-radius: 8px;
@@ -174,10 +180,24 @@ main {
 /* Responsive styling */
 @media (max-width: 600px) {
     .searchbox {
-        width: 150px;
+        width: 100%;
+        max-width: 150px;
     }
 
     .btn {
         padding: 0.5rem;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+    .recipe-card {
+        margin: 0.5rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .recipe-close-btn {
+        padding: 0.3rem;
+        font-size: 1rem;
     }
 }
