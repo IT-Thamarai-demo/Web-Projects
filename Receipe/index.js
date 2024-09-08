@@ -1,13 +1,21 @@
-// Select elements from the DOM
 const searchBox = document.querySelector(".searchbox");
 const searchBtn = document.querySelector(".btn");
 const recipeContainer = document.querySelector(".recipe-container");
-const recipeDetails = document.querySelector(".recipe-details");
-const recipeCloseBtn = document.querySelector(".recipe-close-btn");
 const div = document.querySelector("#hai");
 
+// Event listener for search button
+searchBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  const input = searchBox.value.trim();
+  if (input === "") {
+    alert("Please enter a recipe to search.");
+  } else {
+    fetchRecipes(input);
+  }
+});
+
 // Function to get recipes from API
-const fetchRecipes = (query) => {
+function fetchRecipes(query) {
   recipeContainer.innerHTML = "";
 
   fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`)
@@ -23,50 +31,38 @@ const fetchRecipes = (query) => {
             <h3>${meal.strMeal}</h3>
             <p>${meal.strArea}</p>
             <p>${meal.strCategory}</p>
+            <button class="view-recipe-btn">View Recipe</button>
           `;
-          
-          const button = document.createElement("button");
-          button.textContent = "View Recipe";
-          button.classList.add("view-recipe-btn");
 
-          recipeDiv.appendChild(button);
-          recipeContainer.appendChild(recipeDiv);
-
-          button.addEventListener("click", () => {
+          recipeDiv.querySelector(".view-recipe-btn").addEventListener("click", () => {
             openPopup(meal);
           });
+
+          recipeContainer.appendChild(recipeDiv);
         });
       } else {
         recipeContainer.innerHTML = "<p>No recipes found.</p>";
       }
     })
     .catch((error) => console.error('Error fetching recipes:', error));
-};
+}
 
 // Function to open the recipe details popup
 function openPopup(meal) {
+  const instructions = meal.strInstructions;
+
   div.innerHTML = `
     <div class="popup-content">
-      <p>${meal.strInstructions}</p>
+      <h2>${meal.strMeal}</h2>
+      <img src="${meal.strMealThumb}" alt="${meal.strMeal}" class="popup-image">
+      <p id="instructions">${instructions.split('\n').map(line => `<li>${line}</li>`).join('')}</p>
       <button class="close-btn">Close</button>
     </div>
   `;
   div.style.display = "block";
-  document.querySelector(".close-btn").addEventListener("click", closePopup);
-}
 
-// Function to close the recipe details popup
-function closePopup() {
-  div.style.display = "none";
+  // Event listener for close button
+  document.querySelector(".close-btn").addEventListener("click", () => {
+    div.style.display = "none";
+  });
 }
-
-// Event listener for search button
-searchBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  const input = searchBox.value.trim();
-  if (input === "") {
-    alert("Please enter a recipe to search.");
-  } else {
-    fetchRecipes(input);
-  }
-});
