@@ -92,6 +92,23 @@ body {
   align-items: center;
 }
 
+.popup-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+.popup-content h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.popup-content #instructions {
+  list-style: inside;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+}
+
 .close-btn {
   margin-top: 10px;
   background-color: #007bff;
@@ -108,6 +125,7 @@ body {
   color: white;
 }
 
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
   .searchbox-container {
     flex-direction: column;
@@ -117,5 +135,71 @@ body {
   .btn {
     margin-left: 0;
     margin-top: 10px;
+  }
+
+  #hai {
+    top: 10%;
+    width: 95%;
+    padding: 15px;
+    max-width: none;
+  }
+
+  .popup-content {
+    padding: 10px;
+  }
+
+  .popup-content img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .popup-content h2 {
+    font-size: 20px;
+  }
+
+  .popup-content #instructions {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .searchbox {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 12px;
+    margin-left: 0;
+  }
+
+  .recipe-card {
+    width: 100%;
+    margin: 5px;
+  }
+
+  #hai {
+    top: 5%;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .popup-content {
+    padding: 5px;
+  }
+
+  .popup-content img {
+   width:45%,
+    height:45%,
+    height: auto;
+  }
+
+  .popup-content h2 {
+    font-size: 18px;
+  }
+
+  .popup-content #instructions {
+    font-size: 12px;
   }
 }
