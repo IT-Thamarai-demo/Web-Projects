@@ -54,7 +54,6 @@ function openPopup(meal) {
   div.innerHTML = `
     <div class="popup-content">
       <h2>${meal.strMeal}</h2>
-      <img src="${meal.strMealThumb}" alt="${meal.strMeal}" class="popup-image">
       <p id="instructions">${instructions.split('\n').map(line => `<li>${line}</li>`).join('')}</p>
       <button class="close-btn">Close</button>
     </div>
