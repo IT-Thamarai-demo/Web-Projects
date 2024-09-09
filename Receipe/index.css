@@ -92,10 +92,7 @@ body {
   align-items: center;
 }
 
-.popup-content img {
-  max-width: 100%;
-  height: auto;
-}
+
 
 .popup-content h2 {
   font-size: 24px;
@@ -106,7 +103,7 @@ body {
   list-style: inside;
   padding: 0;
   margin: 0;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .close-btn {
@@ -145,7 +142,7 @@ body {
   }
 
   .popup-content {
-    padding: 10px;
+    padding: 5px;
   }
 
   .popup-content img {
@@ -154,7 +151,7 @@ body {
   }
 
   .popup-content h2 {
-    font-size: 20px;
+    font-size: 16px;
   }
 
   .popup-content #instructions {
@@ -182,19 +179,14 @@ body {
   #hai {
     top: 5%;
     width: 100%;
-    padding: 10px;
+    padding: 5px;
   }
 
   .popup-content {
     padding: 5px;
   }
 
-  .popup-content img {
-   width:45%;
-    height:45%;
   
-  }
-
   .popup-content h2 {
     font-size: 18px;
   }
