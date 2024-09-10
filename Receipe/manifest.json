@@ -1,0 +1,21 @@
+{
+  "name": "Recipe Finder",
+  "short_name": "Recipes",
+  "description": "A recipe search app with meal details",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#5cb85c",
+  "icons": [
+    {
+      "src": "/path/to/icon.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/path/to/icon.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}
