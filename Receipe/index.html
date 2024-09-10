@@ -46,7 +46,16 @@
 
   <!-- JavaScript -->
   <script src="index.js"></script>
-  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js').then(function() {
+      console.log('Service Worker Registered');
+    });
+  }
+</script>
+
+  </script>
 
 </body>
 </html>
