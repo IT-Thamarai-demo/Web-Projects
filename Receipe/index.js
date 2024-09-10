@@ -1,67 +1,82 @@
-const searchBox = document.querySelector(".searchbox");
-const searchBtn = document.querySelector(".btn");
-const recipeContainer = document.querySelector(".recipe-container");
-const div = document.querySelector("#hai");
+// Initialize Google Translate
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+}
 
-// Event listener for search button
-searchBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  const input = searchBox.value.trim();
-  if (input === "") {
-    alert("Please enter a recipe to search.");
+// Recipe search functionality
+document.querySelector('.btn').addEventListener('click', function () {
+  if (!navigator.onLine) {
+    showNoInternetMessage(); // Show no internet message if offline
   } else {
-    fetchRecipes(input);
+    const query = document.querySelector('.searchbox').value;
+    fetchRecipe(query);
   }
 });
 
-// Function to get recipes from API
-function fetchRecipes(query) {
-  recipeContainer.innerHTML = "";
-
+// Fetch recipe from API
+function fetchRecipe(query) {
   fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`)
-    .then((res) => res.json())
-    .then((data) => {
-      if (data.meals) {
-        data.meals.forEach((meal) => {
-          const recipeDiv = document.createElement("div");
-          recipeDiv.classList.add("recipe-card");
-
-          recipeDiv.innerHTML = `
-            <img src="${meal.strMealThumb}" alt="${meal.strMeal}">
-            <h3>${meal.strMeal}</h3>
-            <p>${meal.strArea}</p>
-            <p>${meal.strCategory}</p>
-            <button class="view-recipe-btn">View Recipe</button>
-          `;
-
-          recipeDiv.querySelector(".view-recipe-btn").addEventListener("click", () => {
-            openPopup(meal);
-          });
-
-          recipeContainer.appendChild(recipeDiv);
-        });
-      } else {
-        recipeContainer.innerHTML = "<p>No recipes found.</p>";
-      }
+    .then(response => response.json())
+    .then(data => {
+      displayRecipes(data.meals);
     })
-    .catch((error) => console.error('Error fetching recipes:', error));
+    .catch(error => {
+      console.log('Error fetching recipes:', error);
+    });
 }
 
-// Function to open the recipe details popup
-function openPopup(meal) {
-  const instructions = meal.strInstructions;
+// Display list of recipes
+function displayRecipes(meals) {
+  const recipeContainer = document.querySelector('.recipe-container');
+  recipeContainer.innerHTML = ''; // Clear previous results
 
-  div.innerHTML = `
-    <div class="popup-content">
-      <h2>${meal.strMeal}</h2>
-      <p id="instructions">${instructions.split('\n').map(line => `<li>${line}</li>`).join('')}</p>
-      <button class="close-btn">Close</button>
-    </div>
-  `;
-  div.style.display = "block";
+  meals.forEach(meal => {
+    const recipeCard = document.createElement('div');
+    recipeCard.classList.add('recipe-card');
+    recipeCard.innerHTML = `
+      <img src="${meal.strMealThumb}" alt="${meal.strMeal}">
+      <h3>${meal.strMeal}</h3>
+      <button class="view-recipe-btn">View Recipe</button>
+    `;
 
-  // Event listener for close button
-  document.querySelector(".close-btn").addEventListener("click", () => {
-    div.style.display = "none";
+    recipeCard.querySelector('.view-recipe-btn').addEventListener('click', function () {
+      openRecipeDetails(meal);
+    });
+
+    recipeContainer.appendChild(recipeCard);
   });
 }
+
+// Open recipe details
+function openRecipeDetails(meal) {
+  document.querySelector('.recipe-container').style.display = 'none';
+  const details = document.getElementById('recipe-details');
+  details.style.display = 'block';
+
+  document.getElementById('meal-name').innerText = meal.strMeal;
+  document.getElementById('meal-thumb').src = meal.strMealThumb;
+
+  const instructionsList = meal.strInstructions.split('\n').map(step => `<li>${step}</li>`).join('');
+  document.getElementById('instructions-list').innerHTML = instructionsList;
+}
+
+// Back button to return to recipe finder
+document.querySelector('.back-btn').addEventListener('click', function (event) {
+  event.preventDefault();
+  document.getElementById('recipe-details').style.display = 'none';
+  document.querySelector('.recipe-container').style.display = 'flex';
+});
+
+// Show a message when offline
+function showNoInternetMessage() {
+  alert("You are currently offline. Please turn on your internet connection.");
+}
+
+// Listen for network changes
+window.addEventListener('offline', function () {
+  showNoInternetMessage(); // Show message when offline
+});
+
+window.addEventListener('online', function () {
+  alert("You are back online! You can now search for recipes.");
+});
