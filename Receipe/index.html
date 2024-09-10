@@ -4,12 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Recipe Search and Translate</title>
-  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="style.css"> <!-- Linking CSS -->
 </head>
 <body>
-
-  <!-- Google Translate Dropdown -->
-  <div id="google_translate_element"></div>
 
   <div class="container">
     <!-- Welcome Intro -->
@@ -17,6 +14,9 @@
       <h1>Welcome to the Recipe Finder!</h1>
       <p>Search for recipes and view their details with ease. Use the search bar below to get started.</p>
     </div>
+
+    <!-- Google Translate Widget -->
+    <div id="google_translate_element"></div>
 
     <!-- Search form -->
     <div class="searchbox-container">
@@ -27,25 +27,23 @@
     <!-- Recipe container -->
     <div class="recipe-container"></div>
 
-    <!-- Recipe popup details -->
-    <div id="hai"></div>
+    <!-- Recipe details section -->
+    <div id="recipe-details">
+      <h2 id="meal-name"></h2>
+      <img id="meal-thumb" alt="Meal Image">
+      <ul id="instructions-list"></ul>
+      <a href="#" class="back-btn">Back to Recipe Finder</a>
+    </div>
   </div>
 
-  <!-- Footer with Copyright -->
+  <!-- Footer -->
   <div class="footer">
     <p>&copy; 2024 Recipe Finder. All rights reserved.</p>
   </div>
 
-  <!-- Google Translate Script -->
-  <script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement(
-        { pageLanguage: 'en' },
-        'google_translate_element'
-      );
-    }
-  </script>
-  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-  <script src="index.js"></script>
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 </body>
 </html>
