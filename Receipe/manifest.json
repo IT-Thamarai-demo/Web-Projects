@@ -1,21 +1,30 @@
 {
   "name": "Recipe Finder",
   "short_name": "Recipes",
-  "description": "A recipe search app with meal details",
+  "description": "A recipe search app with meal details and cooking instructions.",
   "start_url": "/index.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#5cb85c",
+  "orientation": "portrait",
   "icons": [
     {
-      "src": "/path/to/icon.png",
+      "src": "/assets/icons/icon-192x192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "/path/to/icon.png",
+      "src": "/assets/icons/icon-512x512.png",
       "type": "image/png",
       "sizes": "512x512"
+    },
+    {
+      "src": "/assets/icons/icon-72x72.png",
+      "type": "image/png",
+      "sizes": "72x72"
     }
-  ]
+  ],
+  "lang": "en",
+  "scope": "/",
+  "categories": ["cooking", "food", "recipes"]
 }
