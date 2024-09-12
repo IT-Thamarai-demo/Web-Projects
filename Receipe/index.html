@@ -1,62 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Recipe Search and Translate</title>
-  <meta name="theme-color" content="#5cb85c">
-  
-  <link rel="stylesheet" href="index.css"> <!-- Linking CSS -->
-  <link rel="manifest" href="/manifest.json">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Finder</title>
+    <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
 
-  <div class="container">
-    <!-- Welcome Intro -->
-    <div class="welcome-intro">
-      <h1>Welcome to the Recipe Finder!</h1>
-      <p>Search for recipes and view their details with ease. Use the search bar below to get started.</p>
+    <div class="container">
+        <div class="welcome-intro">
+            <h1>Welcome to Recipe Finder!</h1>
+            <p>Discover delicious recipes and watch instructional videos to cook your favorite meals. Search for recipes, view detailed instructions, and enjoy cooking like a pro!</p>
+        </div>
+
+        <div class="searchbox-container">
+            <input type="text" class="searchbox" placeholder="Search for a recipe">
+            <button class="btn">Search</button>
+        </div>
+
+        <div id="google_translate_element"></div>
+
+        <div class="recipe-container"></div>
+
+        <div id="recipe-details">
+            <h3 id="meal-name"></h3>
+            <img id="meal-thumb" src="" alt="Meal Thumbnail" loading="lazy"> <!-- Added lazy loading -->
+            <iframe id="meal-video" frameborder="0" allowfullscreen></iframe>
+            <p>Watch this video on YouTube and enable Tamil captions if available.</p>
+            <a id="youtube-link" href="" target="_blank">View Video on YouTube</a>
+            <ul id="instructions-list"></ul>
+            <button class="back-btn">Back</button>
+        </div>
     </div>
 
-    <!-- Google Translate Widget -->
-    <div id="google_translate_element"></div>
-
-    <!-- Search form -->
-    <div class="searchbox-container">
-      <input type="text" class="searchbox" placeholder="Enter a recipe name">
-      <button class="btn">Search</button>
+    <div class="footer">
+        <p>Created by ThamaraiKannan. &copy; 2024</p>
     </div>
 
-    <!-- Recipe container -->
-    <div class="recipe-container"></div>
-
-    <!-- Recipe details section -->
-    <div id="recipe-details">
-      <h2 id="meal-name"></h2>
-      <img id="meal-thumb" alt="Meal Image">
-      <ul id="instructions-list"></ul>
-      <a href="#" class="back-btn">Back to Recipe Finder</a>
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <div class="footer">
-    <p>&copy; 2024 Recipe Finder. All rights reserved.</p>
-  </div>
-
-  <!-- JavaScript -->
-  <script src="index.js"></script>
-  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
-
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/service-worker.js').then(function() {
-      console.log('Service Worker Registered');
-    });
-  }
-</script>
-
-  </script>
+    <script src="app.js"></script>
 
 </body>
 </html>
