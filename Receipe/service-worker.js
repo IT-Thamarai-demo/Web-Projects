@@ -40,3 +40,23 @@ self.addEventListener('activate', function(event) {
     })
   );
 });
+self.addEventListener('fetch', function(event) {
+  if (event.request.url.includes('themealdb.com')) {
+    event.respondWith(
+      caches.open(CACHE_NAME).then(function(cache) {
+        return fetch(event.request).then(function(response) {
+          cache.put(event.request, response.clone());
+          return response;
+        }).catch(function() {
+          return caches.match(event.request);
+        });
+      })
+    );
+  } else {
+    event.respondWith(
+      caches.match(event.request).then(function(response) {
+        return response || fetch(event.request);
+      })
+    );
+  }
+});
