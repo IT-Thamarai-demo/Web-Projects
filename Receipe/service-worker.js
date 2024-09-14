@@ -2,9 +2,9 @@ const CACHE_NAME = 'recipe-cache-v1';
 const urlsToCache = [
   '/',
   '/index.html',
-  '/styles.css',
+  '/style.css',
   '/script.js',
-  '/images/logo.png', // Add your images and other assets here
+  '', // Add your images and other assets here
 ];
 
 // Install a service worker
