@@ -2,7 +2,7 @@ const CACHE_NAME = 'recipe-app-cache-v1';
 const urlsToCache = [
   '/',
   '/index.html',
-  '/styles.css',
+  '/style.css',
   '/script.js',
   '/icons/192x192.png',
   '/icons/512x512.png'
