@@ -86,10 +86,11 @@ function googleTranslateElementInit() {
   
   // Save searched recipes to localStorage for offline use
   function saveToLocalStorage(query, meals) {
-    const storedRecipes = JSON.parse(localStorage.getItem('storedRecipes')) || {};
-    storedRecipes[query] = meals;
-    localStorage.setItem('storedRecipes', JSON.stringify(storedRecipes));
-  }
+  const storedRecipes = JSON.parse(localStorage.getItem('storedRecipes')) || {};
+  storedRecipes[query] = meals;
+  localStorage.setItem('storedRecipes', JSON.stringify(storedRecipes));
+}
+
   
   // Fetch user-searched recipe from TheMealDB API
   function fetchRecipe(query) {
@@ -136,16 +137,15 @@ function googleTranslateElementInit() {
   }
   
   // Check local storage for offline recipes
-  function searchOfflineRecipes(query) {
-    const storedRecipes = JSON.parse(localStorage.getItem('storedRecipes')) || {};
-    if (storedRecipes[query]) {
-      alert("You are offline. Showing previously searched recipes.");
-      displayRecipes(storedRecipes[query]);
-    } else {
-      alert("You are offline and no matching recipes found. Displaying predefined recipe names.");
-      fetchPredefinedRecipes();
-    }
+ function searchOfflineRecipes(query) {
+  const storedRecipes = JSON.parse(localStorage.getItem('storedRecipes')) || {};
+  if (storedRecipes[query]) {
+    displayRecipes(storedRecipes[query]);
+  } else {
+    alert("You are offline and no matching recipes found.");
   }
+}
+
   
   // Add offline support for searching saved recipes
   document.querySelector('.searchbox').addEventListener('input', function () {
